@@ -1,3 +1,7 @@
+<head> 
+  <link rel="stylesheet" type="text/css" href="../css/style_php.css"> 
+</head>
+
 <?php
     //incluir el archivo Cliente.php para poder utilizar
     //el código que contienen
@@ -5,12 +9,14 @@
     //crear un objeto de tipo Cliente = instanciar la clase
     $cliente = new Cliente();
     
-    $cliente->nit="112233-4";
-    $cliente->telefono=12345678;
-    $cliente->apellido="Prueba";
-    $cliente->asignarNombre("Cliente");
-    $cliente->direccion="Zona 1";
+    $cliente->nit=$_GET['txtNit'];
+    $cliente->asignarNombre($_GET['txtNombre']);
+    $cliente->apellido=$_GET['txtApellido'];
+    $cliente->telefono=$_GET['txtTelefono'];
+    $cliente->direccion=$_GET['txtDireccion'];
     
-    echo $cliente->verDatos();
-    //echo "<br>". $cliente->nombreCompleto();
+    echo "<form>
+            <h3>{$cliente->verDatos()}</h3>
+        </form>";
+
 ?>

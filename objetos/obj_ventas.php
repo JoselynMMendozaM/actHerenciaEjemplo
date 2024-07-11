@@ -1,3 +1,7 @@
+<head> 
+    <link rel="stylesheet" type="text/css" href="../css/style_php.css"> 
+</head>
+
 <?php
     include_once('../clases/Ventas.php');
     $ventas = new Ventas();
@@ -15,6 +19,8 @@
     $ventas->telefono=12345678;
     $ventas->direccion="Zona 5";
 
-    echo "Sueldo liquido: ". $ventas->calcularSueldoLiquido();
-    echo $ventas->verDatos();
+    echo "<form>
+            <h3>{$ventas->verDatos()}</h3>
+        </form>";
+
 ?>
